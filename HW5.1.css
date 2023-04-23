@@ -1,0 +1,145 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.email-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  margin: 100px 0px;
+  gap: 100px;
+  position: relative;
+  max-width: 605px;
+}
+.email-form__text-grey {
+  color: #000000;
+  opacity: 0.55;
+  position: absolute;
+  top: 0px;
+  left: -190px;
+}
+h2 {
+  font-family: 'Ogg';
+  font-size: 60px;
+  line-height: 107%;
+  color: #000000;
+}
+.email-form__title-italic {
+  font-style: italic;
+}
+p {
+  font-family: 'TradeGothic LT Extended';
+  font-size: 16px;
+  line-height: 175%;
+  color: #71870E;
+  opacity: 0.85;
+}
+.email-form__text {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+.email-form__text-green {
+  max-width: 320px;
+}
+
+.email-form__form {
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+}
+
+input[type=text] {
+  width: 100%;
+  padding: 5px 0px;
+  margin: 16px 0;
+  box-sizing: border-box;
+  border: none;
+  border-bottom: 1px solid #737373;
+  font-family: 'TradeGothic LT Extended';
+  font-size: 16px;
+  line-height: 150%;
+  color: #C4C4C4;
+  opacity: 0.7;
+}
+
+.btn {
+  font-family: 'TradeGothic LT Extended';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: #D0A049;
+  background-color: transparent;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: 36px;
+}
+
+.email-form__button {
+  display: flex;
+  justify-content: center;
+}
+
+.email-form__project-type {
+  display: flex;
+  flex-direction: column;
+}
+
+.project-type {
+  width: 100%;
+  padding: 5px 0px;
+  margin: 16px 0;
+  box-sizing: border-box;
+  border: none;
+  border-bottom: 1px solid #737373;
+  font-family: 'TradeGothic LT Extended';
+  font-size: 16px;
+  line-height: 150%;
+  color: #C4C4C4;
+  opacity: 0.7;
+}
+
+.email-form__agreement {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+input[type=checkbox] {
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+input[type=checkbox]::before {
+  height: 20px;
+  width: 20px;
+  box-sizing: border-box;
+  border: #767676 2px solid;
+  background-color: transparent;
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.container input:checked ~ .checkmark {
+  background-color: #2196F3;
+}

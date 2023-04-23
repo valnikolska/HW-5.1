@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html land="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UNEAK sneakers</title>
+  <meta name="description" content="Sneakers which will change your next step making it more sustainable, animal friendly, conscious">
+  <link rel="stylesheet" type="text/css" href="HW5.1.css">
+</head>
+
+<body>
+  <main class="email-form">
+    <p class="email-form__text-grey">(Booking)</p>
+    <h2 class="email-form__title">Send an <span class="email-form__title-italic">email</span></h2>
+    <div class="email-form__text">
+      <p class="email-form__text-green">If you have a general or project enquiry, please drop me an email — available now</p>
+    </div>
+    <form class="email-form__form">
+      <div class="email-form__email">
+        <label for="email">Email</label>
+        <input type="text" id="email" name="email" placeholder="Your email">
+      </div>
+      <div class="email-form__name">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" placeholder="Your name">
+      </div>
+      <div class="email-form__message">
+        <label for="message">Message</label>
+        <input type="text" id="message" name="message" placeholder="Start typing here">
+      </div>
+      <div class="email-form__project-type">
+        <label for="project-type">Project type</label>
+        <select id="project-type" name="project-type" class="project-type">
+          <option value="reserve-event">Reserve for personal event</option>
+          <option value="buy-ticket">Buy tickets for a next concert</option>
+          <option value="reserve-venue">Reserve from a venue</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+      <div class="email-form__agreement">
+        <input type="checkbox" id="agreement" name="agreement">
+      <label for="agreement">I agree to receive ocasional newsletter with latest news and updates</label>
+      </div>
+      <div class="email-form__button">
+        <button type="submit" class="btn email-form__btn"><img src="icons/line.svg">Send</button>
+      </div>
+    </form>
+  </main>
+</body>
+
+</html>
