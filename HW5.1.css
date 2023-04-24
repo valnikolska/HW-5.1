@@ -3,21 +3,61 @@
   padding: 0px;
   box-sizing: border-box;
 }
-body {
+@font-face {
+  font-family: 'Ogg';
+  src: url(fonts/Ogg-Roman.woff) format('woff'), url(fonts/Ogg-Roman.ttf) format('ttf');
+}
+@font-face {
+  font-family: 'Ogg';
+  src: url(fonts/Ogg-Italic.woff) format('woff'), url(fonts/Ogg-Italic.ttf) format('ttf');
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Noto Serif Display';
+  src: url(fonts/NotoSerifDisplay_SemiCondensed-Bold.woff) format('woff'), url(fonts/NotoSerifDisplay_SemiCondensed-Bold.ttf) format('ttf');
+  font-weight: 700;
+	font-style: 700;
+}
+@font-face {
+  font-family: 'Noto Serif Display';
+  src: url(fonts/NotoSerifDisplay_SemiCondensed-BoldItalic.woff) format('woff'), url(fonts/NotoSerifDisplay_SemiCondensed-BoldItalic.ttf) format('ttf');
+  font-weight: 700;
+	font-style: 700;
+  font-style: italic;
+}
+
+
+@font-face {
+  font-family: 'Trade Gothic LT Extended';
+  src: url(fonts/Trade-Gothic-LT-Extended.woff) format('woff'), url(fonts/Trade-Gothic-LT-Extended.ttf) format('ttf');
+  font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+  font-family: 'Monserrat';
+  src: url(fonts/Montserrat-Regular.woff) format('woff'), url(fonts/Montserrat-Regular.ttf) format('ttf');
+  font-weight: normal;
+	font-style: normal;
+}
+
+
+main {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin: 100px auto;
+  max-width: 605px;
 }
 .email-form {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: start;
-  margin: 100px 0px;
   gap: 100px;
   position: relative;
-  max-width: 605px;
+  width: 100%;
 }
 .email-form__text-grey {
   color: #000000;
@@ -27,7 +67,7 @@ body {
   left: -190px;
 }
 h2 {
-  font-family: 'Ogg';
+  font-family: 'Ogg', 'Noto Serif Display', 'Roboto', serif;
   font-size: 60px;
   line-height: 107%;
   color: #000000;
@@ -36,7 +76,7 @@ h2 {
   font-style: italic;
 }
 p {
-  font-family: 'TradeGothic LT Extended';
+  font-family: 'Trade Gothic LT Extended', 'Monserrat', 'Arial', sans-serif;
   font-size: 16px;
   line-height: 175%;
   color: #71870E;
@@ -55,24 +95,51 @@ p {
   display: flex;
   flex-direction: column;
   gap: 35px;
+  width: 100%;
 }
 
-input[type=text] {
+.email-form__input {
   width: 100%;
-  padding: 5px 0px;
+  padding: 6px 0px;
   margin: 16px 0;
   box-sizing: border-box;
   border: none;
   border-bottom: 1px solid #737373;
-  font-family: 'TradeGothic LT Extended';
+  font-family: 'Trade Gothic LT Extended', 'Monserrat', 'Arial', sans-serif;
   font-size: 16px;
   line-height: 150%;
-  color: #C4C4C4;
-  opacity: 0.7;
+  color: #000;
+}
+
+.email-form__input:focus {
+  outline: none;
+}
+
+.email-form__input::placeholder {
+  color: #D6D6D6;
+}
+.email-form__input::-webkit-input-placeholder {
+  color: #D6D6D6;
+}
+.email-form__input::-moz-placeholder {
+  color: #D6D6D6;
+}
+.email-form__input::-moz-placeholder {
+  color: #D6D6D6;
+}
+.email-form__input::-ms-input-placeholder {
+  color: #D6D6D6;
+}
+
+.email-form__item label {
+  font-family: 'Ogg', 'Noto Serif Display', 'Roboto', serif;
+  font-size: 16px;
+  line-height: 150%;
+  color: #000000;
 }
 
 .btn {
-  font-family: 'TradeGothic LT Extended';
+  font-family: 'Trade Gothic LT Extended', 'Monserrat', 'Arial', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
@@ -102,16 +169,39 @@ input[type=text] {
 
 .project-type {
   width: 100%;
-  padding: 5px 0px;
+  padding: 6px 0px;
   margin: 16px 0;
+  background-color: transparent;
   box-sizing: border-box;
   border: none;
   border-bottom: 1px solid #737373;
-  font-family: 'TradeGothic LT Extended';
+  font-family: 'Trade Gothic LT Extended', 'Monserrat', 'Arial', sans-serif;
   font-size: 16px;
   line-height: 150%;
-  color: #C4C4C4;
-  opacity: 0.7;
+  color: #D6D6D6;
+  appearance: none;
+  outline: none;
+}
+
+.project-type:focus {
+  outline: none;
+  color: #000;
+}
+
+.email-form__select {
+  position: relative;
+}
+.email-form__select::after {
+  content: url(icons/arrow-down.svg);
+  position: absolute;
+  top: 50%;
+  right: 0px;
+  transform: translateY(-50%);
+  display: block;
+  width: 18px;
+  height: 14px;
+  color-scheme: #000;
+  pointer-events: none;
 }
 
 .email-form__agreement {
@@ -120,26 +210,86 @@ input[type=text] {
   flex-wrap: nowrap;
 }
 
-input[type=checkbox] {
-  opacity: 0;
-  cursor: pointer;
+.email-form__checkbox {
   height: 0;
   width: 0;
+  opacity: 0;
+  margin-left: 36px;
 }
-input[type=checkbox]::before {
-  height: 20px;
+
+.agreement {
+  position: relative;
+}
+
+.email-form__checkbox_custom {
+  display: inline-block;
+  position: absolute;
+  left: 5px;
+  top: 50%;
+  transform: translate(-50%, -50%);
   width: 20px;
-  box-sizing: border-box;
-  border: #767676 2px solid;
-  background-color: transparent;
+  height: 20px;
+  border: 2px solid #767676;
+  margin-left: -36px;
+  border-radius: 4px;
+  position: relative;
+}
+.email-form__checkbox_custom::before {
+  display: inline-block;
+  content: url(icons/checked.svg);
+  height: 14px;
+  width: 14px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 45%;
+  top: 45%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: 0.2s ease-in;
 }
 
-/* On mouse-over, add a grey background color */
-.container:hover input ~ .checkmark {
-  background-color: #ccc;
+.email-form__checkbox:checked + .email-form__checkbox_custom::before {
+  transform: translate(-50%, -50%) scale(1);
 }
 
-/* When the checkbox is checked, add a blue background */
-.container input:checked ~ .checkmark {
-  background-color: #2196F3;
+.email-form__checkbox_custom:hover {
+  border: 2px solid #71870E;
+}
+
+@media only screen and (max-width: 1200px) {
+  .email-form__text-grey {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 625px) {
+  main {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin: 50px 10px;
+    width: 100%;
+  }
+  h2 {
+    font-size: 48px;
+    line-height: 107%;
+  }
+  .email-form {
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 50px;
+    width: 100%;
+  }
+  .email-form__text {
+    justify-content: flex-start;
+  }
+  .email-form__text-green {
+    max-width: 100%
+  }
+}
+@media only screen and (max-width: 512px) {
+  .email-form__checkbox_custom {
+    top: 30%;
+  }
 }

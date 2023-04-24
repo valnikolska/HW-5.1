@@ -17,32 +17,37 @@
       <p class="email-form__text-green">If you have a general or project enquiry, please drop me an email — available now</p>
     </div>
     <form class="email-form__form">
-      <div class="email-form__email">
+      <div class="email-form__item email-form__email">
         <label for="email">Email</label>
-        <input type="text" id="email" name="email" placeholder="Your email">
+        <input type="text" id="email" name="email" placeholder="Your email" required class="email-form__input">
       </div>
-      <div class="email-form__name">
+      <div class="email-form__item email-form__name">
         <label for="name">Name</label>
-        <input type="text" id="name" name="name" placeholder="Your name">
+        <input type="text" id="name" name="name" placeholder="Your name" required class="email-form__input">
       </div>
-      <div class="email-form__message">
+      <div class="email-form__item email-form__message">
         <label for="message">Message</label>
-        <input type="text" id="message" name="message" placeholder="Start typing here">
+        <input type="text" id="message" name="message" placeholder="Start typing here" required class="email-form__input">
       </div>
-      <div class="email-form__project-type">
+      <div class="email-form__item email-form__project-type">
         <label for="project-type">Project type</label>
-        <select id="project-type" name="project-type" class="project-type">
-          <option value="reserve-event">Reserve for personal event</option>
-          <option value="buy-ticket">Buy tickets for a next concert</option>
-          <option value="reserve-venue">Reserve from a venue</option>
-          <option value="other">Other</option>
-        </select>
+        <div class="email-form__select">
+          <select id="project-type" name="project-type" class="project-type">
+            <option value="reserve-event">Reserve for personal event</option>
+            <option value="buy-ticket">Buy tickets for a next concert</option>
+            <option value="reserve-venue">Reserve from a venue</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
       </div>
-      <div class="email-form__agreement">
-        <input type="checkbox" id="agreement" name="agreement">
-      <label for="agreement">I agree to receive ocasional newsletter with latest news and updates</label>
+      <div class="email-form__item email-form__agreement">
+        <label for="agreement">
+          <input type="checkbox" id="agreement" name="agreement" class="email-form__checkbox">
+          <span class="email-form__checkbox_custom"></span>
+          I agree to receive ocasional newsletter with latest news and updates
+        </label>
       </div>
-      <div class="email-form__button">
+      <div class="email-form__item email-form__button">
         <button type="submit" class="btn email-form__btn"><img src="icons/line.svg">Send</button>
       </div>
     </form>
